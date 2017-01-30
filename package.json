@@ -1,5 +1,5 @@
 {
-  "name": "use-request",
+  "name": "liri-node-app",
   "version": "1.0.0",
   "description": "Week 10 Node HW",
   "main": "keys.js",
@@ -17,8 +17,8 @@
   },
   "homepage": "https://github.com/reddrum217/liri-node-app#readme",
   "dependencies": {
-    "request": "^2.79.0"
+    "request": "^2.79.0",
+    "spotify": "^0.3.0",
+    "twitter": "^1.7.0"
   }
 }
-
-
