@@ -69,20 +69,16 @@ spotify.search({ type: 'track', query: song }, function(err, data) {
         return;
     }
  	if (userResponse == 'spotify-this-song') {
-    	console.log(data);
-
     	//console log artist
-
-    	//song's name
-
+    	console.log(data.tracks.items[0].album.artists[0].name);
+		//song's name
+		console.log(data.tracks.items[0].album.name);
     	//preview link of song from spotify
-
+    	console.log(data.tracks.items[0].preview_url);
     	//the album
-
+    	console.log(data.tracks.items[0].album.name);
 		};
   	
-
-
 });
 
 
