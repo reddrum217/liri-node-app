@@ -2,7 +2,9 @@ var k = require('./keys.js');
 console.log(k);
 
 
-var userResponse = process.argv[2]
+var userResponse = process.argv[2];
+var userResponse2 = process.argv[3];
+
 console.log(userResponse);
 
 
@@ -45,7 +47,7 @@ var client = new Twitter({
 
 
 
-var params = {screen_name: 'reddrum217', count: 20};
+var params = {screen_name: 'peascarrotsband', count: 20};
 
 client.get('statuses/user_timeline', params, function(error, tweets, response) {
   if (!error) {
@@ -59,14 +61,28 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
 
 // Require Spotify API
 var spotify = require('spotify');
+var song = String(userResponse2);
  
-spotify.search({ type: 'track', query: 'dancing in the moonlight' }, function(err, data) {
+spotify.search({ type: 'track', query: song }, function(err, data) {
     if ( err ) {
         console.log('Error occurred: ' + err);
         return;
     }
- 
-    // Do something with 'data' 
+ 	if (userResponse == 'spotify-this-song') {
+    	console.log(data);
+
+    	//console log artist
+
+    	//song's name
+
+    	//preview link of song from spotify
+
+    	//the album
+
+		};
+  	
+
+
 });
 
 
