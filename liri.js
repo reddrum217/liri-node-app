@@ -95,14 +95,16 @@ var request = require('request');
 
 
 var movie = "";
-var queryUrl = 'http://www.omdbapi.com/?t=' + movie + '&y=&plot=short&r=json';
+// var queryUrl = 'http://www.omdbapi.com/?t=' + movie + '&y=&plot=short&r=json';
 
 for (i = 3; i < process.argv.length; i++){
+    // console.log(process.argv[3]);
     if (i == 3) movie = movie + process.argv[i];
     else movie = movie + "+" + process.argv[i];
+    // console.log(movie);
 };
 console.log(queryUrl);
-
+var queryUrl = 'http://www.omdbapi.com/?t=' + movie + '&y=&plot=short&r=json';
 
 request(queryUrl, function (error, response, body) {
   if (!error && response.statusCode == 200) {
