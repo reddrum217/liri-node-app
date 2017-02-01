@@ -92,10 +92,24 @@ spotify.search({ type: 'track', query: song }, function(err, data) {
 
 var request = require('request');
 
-var queryUrl = 
+var queryUrl = 'http://www.omdbapi.com/?t=' + movie + '&y=&plot=short&r=json';
 
-request('http://www.ombd.com', function (error, response, body) {
+var movie = "";
+
+for (i = 2; i < process.argv.length; i++){
+    if (i == 2) movie = movie + process.argv[i];
+    else movie = movie + "+" + process.argv[i];
+};
+console.log(movie);
+
+
+request(queryUrl, function (error, response, body) {
   if (!error && response.statusCode == 200) {
     console.log(body) // Show the HTML for the Google homepage. 
+  }
+  if (userResponse == 'movie-this'){
+      
+
+
   }
 })
