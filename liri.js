@@ -92,23 +92,34 @@ spotify.search({ type: 'track', query: song }, function(err, data) {
 
 var request = require('request');
 
-var queryUrl = 'http://www.omdbapi.com/?t=' + movie + '&y=&plot=short&r=json';
+
 
 var movie = "";
+var queryUrl = 'http://www.omdbapi.com/?t=' + movie + '&y=&plot=short&r=json';
 
-for (i = 2; i < process.argv.length; i++){
-    if (i == 2) movie = movie + process.argv[i];
+for (i = 3; i < process.argv.length; i++){
+    if (i == 3) movie = movie + process.argv[i];
     else movie = movie + "+" + process.argv[i];
 };
-console.log(movie);
+console.log(queryUrl);
 
 
 request(queryUrl, function (error, response, body) {
   if (!error && response.statusCode == 200) {
     console.log(body) // Show the HTML for the Google homepage. 
   }
-  if (userResponse == 'movie-this'){
-      
+  if (userResponse2 == 'movie-this'){
+    
+      //Title of the movie.
+      console.log('Title: ' + (JSON.parse(body).Title));
+      //Year the movie came out.
+      //IMDB Rating of the movie.
+//Country where the movie was produced.
+//Language of the movie.
+//Plot of the movie.
+//Actors in the movie.
+//Rotten Tomatoes Rating.
+//Rotten Tomatoes URL.
 
 
   }
