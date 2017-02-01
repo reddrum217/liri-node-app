@@ -1,11 +1,11 @@
 var k = require('./keys.js');
-console.log(k);
+// console.log(k);
 
 
 var userResponse = process.argv[2];
 var userResponse2 = process.argv[3];
 
-console.log(userResponse);
+// console.log(userResponse);
 
 
 
@@ -61,22 +61,26 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
 
 // Require Spotify API
 var spotify = require('spotify');
+
+//Still need to take in multiple words for song response
 var song = String(userResponse2);
+
  
 spotify.search({ type: 'track', query: song }, function(err, data) {
     if ( err ) {
         console.log('Error occurred: ' + err);
         return;
-    }
- 	if (userResponse == 'spotify-this-song') {
-    	//console log artist
-    	console.log(data.tracks.items[0].album.artists[0].name);
+      }
+ 	  if (userResponse == 'spotify-this-song') {
+    	 
+      //console log artist
+    	 console.log('Artist: ' + data.tracks.items[0].album.artists[0].name);
 		//song's name
-		console.log(data.tracks.items[0].album.name);
+		    console.log('Song: ' + data.tracks.items[0].name);
     	//preview link of song from spotify
-    	console.log(data.tracks.items[0].preview_url);
+    	 console.log('Preview: ' + data.tracks.items[0].preview_url);
     	//the album
-    	console.log(data.tracks.items[0].album.name);
+    	 console.log('Album: ' + data.tracks.items[0].album.name);
 		};
   	
 });
