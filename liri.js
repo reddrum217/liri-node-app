@@ -82,8 +82,20 @@ spotify.search({ type: 'track', query: song }, function(err, data) {
     	//the album
     	 console.log('Album: ' + data.tracks.items[0].album.name);
 		};
+
+    //Add in Ace of Base as a default
   	
 });
 
 
 //Require OMDB
+
+var request = require('request');
+
+var queryUrl = 
+
+request('http://www.ombd.com', function (error, response, body) {
+  if (!error && response.statusCode == 200) {
+    console.log(body) // Show the HTML for the Google homepage. 
+  }
+})
